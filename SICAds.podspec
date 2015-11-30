@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 #s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SICAds.git", :tag => s.version.to_s }
   # s.source = {:http => "https://github.com/DmitriiP/jquery.table-auto-scroll/archive/master.zip"}
   s.source = {:http => "https://github.com/admincaf/SICAds_library/archive/master.zip"}
-  s.source_files = "libSicAds.a", 'include/*'
+#s.source_files = "libSicAds.a", 'include/*'
   s.source_files = "libSICAds.a", 'SICAds.h', 'SICGalleryViewController.h', 'SicAdsBannerView.h'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
