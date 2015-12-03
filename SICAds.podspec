@@ -17,27 +17,25 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-                        Will write here something later (or not)
+                       SICAds iOS Static library distributed via cocoapods
                        DESC
 
   s.homepage         = "https://github.com/admincaf/SICAds_library"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
+  s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Dmitrii Prihodco" => "dmitrii.prihodco@gmail.com" }
-#s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/SICAds.git", :tag => s.version.to_s }
-  # s.source = {:http => "https://github.com/DmitriiP/jquery.table-auto-scroll/archive/master.zip"}
-  s.source = {:http => "https://github.com/admincaf/SICAds_library/archive/master.zip"}
-#s.source_files = "libSicAds.a", 'include/*'
-  s.source_files = "libSICAds.a", 'SICAds.h', 'SICGalleryViewController.h', 'SicAdsBannerView.h'
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source = { :git => "https://github.com/admincaf/SICAds_library.git", :tag => s.version.to_s }
+  s.source_files = "include/*.h"
+  s.public_header_files = "include/*.h"
+  s.preserve_paths = "libSICAds.a"
+  s.ios.vendored_library = "libSICAds.a"
+  # s.social_media_url = "https://twitter.com/<TWITTER_USERNAME>"
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
+  s.ios.frameworks = 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CFNetwork', 'CoreFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'EventKitUI', 'Foundation', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'Social', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'AdSupport', 'AudioToolbox', 'AVFoundation', 'CFNetwork', 'CoreFoundation', 'CoreGraphics', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'EventKit', 'EventKitUI', 'Foundation', 'MediaPlayer', 'MessageUI', 'MobileCoreServices', 'QuartzCore', 'Security', 'Social', 'StoreKit', 'SystemConfiguration', 'UIKit', 'WebKit' 
-  s.library = 'z'
   s.dependency 'Google-Mobile-Ads-SDK'
   s.dependency 'FBAudienceNetwork'
   s.dependency 'RevMob'
